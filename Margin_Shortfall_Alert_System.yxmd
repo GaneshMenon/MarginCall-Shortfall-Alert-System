@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AlteryxDocument yxmdVer="2024.1">
+  <Nodes>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="6" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Client_Info.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Client_Info.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Client_Info.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Legal Name" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Client_Info.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Relationship Manager" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Client_Info.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="6" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Margin_Requirements.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Margin_Requirements.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Required IM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Required VM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="6" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Posted_Collateral.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Posted_Collateral.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Posted Amount" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="318" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Client ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Client ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Client ID" selected="True" rename="Right_Client ID" input="Right_" />
+                <SelectField field="Right_Date" selected="True" rename="Right_Date" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Required IM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Required VM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Client ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Required IM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Required VM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Right_Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Posted Amount" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Client ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Posted Amount" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Client ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="414" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Required IM] + [Required VM]&#xA;" field="Total Required Margin" size="4" type="Float" enabled="true" />
+            <FormulaField expression="[Total Required Margin] - [Posted Amount]" field="Shortfall" size="1073741823" type="V_WString" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Total Required Margin = [Required IM] + [Required VM]
+
+Shortfall = [Total Requir...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Required IM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Required VM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Right_Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Posted Amount" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Total Required Margin" source="Formula: [Required IM] + [Required VM]&#xA;" type="Float" />
+            <Field name="Shortfall" size="1073741823" source="Formula: [Total Required Margin] - [Posted Amount]" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Client ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="702" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Shortfall]&gt;0</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Shortfall]&gt;0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Required IM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Required VM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Right_Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Posted Amount" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Total Required Margin" source="Formula: [Required IM] + [Required VM]&#xA;" type="Float" />
+            <Field name="Shortfall" source="Formula: [Total Required Margin] - [Posted Amount]" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Client ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Required IM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Required VM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Right_Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Posted Amount" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Total Required Margin" source="Formula: [Required IM] + [Required VM]&#xA;" type="Float" />
+            <Field name="Shortfall" source="Formula: [Total Required Margin] - [Posted Amount]" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Client ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="666" y="174" width="180" height="48" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Under True output- These are the clients which are under Collateralized.</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="966" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Client ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Client ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Client ID" selected="True" rename="Right_Client ID" input="Right_" />
+                <SelectField field="Left_Right_Client ID" selected="True" rename="Left_Right_Client ID" input="Left_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Required IM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Required VM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Right_Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Posted Amount" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Total Required Margin" source="Formula: [Required IM] + [Required VM]&#xA;" type="Float" />
+            <Field name="Shortfall" source="Formula: [Total Required Margin] - [Posted Amount]" type="Double" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Client ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Required IM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Required VM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Left_Right_Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Posted Amount" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Total Required Margin" source="Formula: [Required IM] + [Required VM]&#xA;" type="Float" />
+            <Field name="Shortfall" source="Formula: [Total Required Margin] - [Posted Amount]" type="Double" />
+            <Field name="Right_Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Client_Info.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Legal Name" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Client_Info.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Relationship Manager" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Client_Info.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Client ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Client_Info.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Legal Name" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Client_Info.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Relationship Manager" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Client_Info.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Client ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1098" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">_externals\1\Margin Shortfall Aler.csv</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Margin Shortfall Aler.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="PortfolioPluginsGui.Email.Email">
+        <Position x="1134" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SMTPServerName />
+          <ToIsField value="False" />
+          <To>yourname@gmail.com</To>
+          <CcIsField value="False" />
+          <Cc />
+          <BccIsField value="False" />
+          <Bcc />
+          <FromIsField value="False" />
+          <From>yourname@gmail.com</From>
+          <SubjectIsField value="False" />
+          <Subject>Margin Shortfall Alert - [Client ID]</Subject>
+          <BodyIsField value="False" />
+          <Body><![CDATA[Dear RM,
+
+Client [Legal Name] has a margin shortfall of $[Shortfall].
+
+Please take necessary action.
+
+Regards,
+Risk Ops
+]]></Body>
+          <UserName />
+          <Enabled>False</Enabled>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxComposerEmail" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1098" y="282" width="216" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Automated email Trigger to the RM in case Margin Shortfall exceeds Zero</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="690" y="318" width="216" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Under False output- These are the clients which are under Collateralized and require margin call notice</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="558" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Shortfall" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Required IM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Required VM" source="File: C:\Users\ganes\Documents\New folder (8)\Margin_Requirements.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Right_Client ID" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Date" size="255" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Posted Amount" source="File: C:\Users\ganes\Documents\New folder (8)\Posted_Collateral.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Total Required Margin" source="Formula: [Required IM] + [Required VM]&#xA;" type="Float" />
+            <Field name="Shortfall" source="Formula: [Total Required Margin] - [Posted Amount]" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Client ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="17" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="False" />
+      <Destination ToolID="17" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="13" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Join" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Join" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Join" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Margin_Shortfall_Workflow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="e4fcd4e3-0d63-47f6-8bfd-c6f285b63ad3" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="e4fcd4e3-0d63-47f6-8bfd-c6f285b63ad3" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
